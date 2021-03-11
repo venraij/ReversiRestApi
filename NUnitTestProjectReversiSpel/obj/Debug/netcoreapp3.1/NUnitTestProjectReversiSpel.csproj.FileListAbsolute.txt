@@ -1,0 +1,4 @@
+C:\Users\Nick\source\repos\ReversiRestApi\NUnitTestProjectReversiSpel\obj\Debug\netcoreapp3.1\NUnitTestProjectReversiSpel.csprojAssemblyReference.cache
+C:\Users\Nick\source\repos\ReversiRestApi\NUnitTestProjectReversiSpel\obj\Debug\netcoreapp3.1\NUnitTestProjectReversiSpel.AssemblyInfoInputs.cache
+C:\Users\Nick\source\repos\ReversiRestApi\NUnitTestProjectReversiSpel\obj\Debug\netcoreapp3.1\NUnitTestProjectReversiSpel.AssemblyInfo.cs
+C:\Users\Nick\source\repos\ReversiRestApi\NUnitTestProjectReversiSpel\obj\Debug\netcoreapp3.1\NUnitTestProjectReversiSpel.csproj.CoreCompileInputs.cache
