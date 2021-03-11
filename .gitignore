@@ -1,1 +1,3 @@
 .vs
+./ReversiRestApi/obj
+./NUnitTestProjectReversiSpel/obj
