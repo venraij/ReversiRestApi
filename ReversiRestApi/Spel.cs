@@ -17,7 +17,7 @@ namespace ReversiRestApi
 
         public bool Afgelopen()
         {
-            throw new NotImplementedException();
+            
         }
 
         public bool DoeZet(int rijZet, int kolomZet)
@@ -37,7 +37,54 @@ namespace ReversiRestApi
 
         public bool ZetMogelijk(int rijZet, int kolomZet)
         {
-            throw new NotImplementedException();
+            if (rijZet > 7 || kolomZet > 7)
+            {
+                return false;
+            }
+
+            if (Bord[rijZet,kolomZet] != Kleur.Geen)
+            {
+                return false;
+            }
+
+            Queue<Array> mogelijkeDoelwitten = new Queue<Array>();
+
+            if (Bord[rijZet + 1, kolomZet] != AandeBeurt && Bord[rijZet + 1, kolomZet] != Kleur.Geen) {
+                mogelijkeDoelwitten.Enqueue(new int[] {rijZet + 1, kolomZet});
+            }
+            if (Bord[rijZet - 1, kolomZet] != AandeBeurt && Bord[rijZet - 1, kolomZet] != Kleur.Geen) {
+                mogelijkeDoelwitten.Enqueue(new int[] { rijZet - 1, kolomZet });
+            }
+            if (Bord[rijZet, kolomZet + 1] != AandeBeurt && Bord[rijZet, kolomZet + 1] != Kleur.Geen) {
+                mogelijkeDoelwitten.Enqueue(new int[] { rijZet, kolomZet + 1 });
+            }
+            if (Bord[rijZet, kolomZet - 1] != AandeBeurt && Bord[rijZet, kolomZet - 1] != Kleur.Geen) {
+                mogelijkeDoelwitten.Enqueue(new int[] { rijZet, kolomZet - 1 });
+            }
+            if (Bord[rijZet - 1, kolomZet - 1] != AandeBeurt && Bord[rijZet - 1, kolomZet - 1] != Kleur.Geen)
+            {
+                mogelijkeDoelwitten.Enqueue(new int[] { rijZet - 1, kolomZet - 1 });
+            }
+            if (Bord[rijZet + 1, kolomZet + 1] != AandeBeurt && Bord[rijZet + 1, kolomZet + 1] != Kleur.Geen)
+            {
+                mogelijkeDoelwitten.Enqueue(new int[] { rijZet + 1, kolomZet + 1 });
+            }
+            if (Bord[rijZet - 1, kolomZet + 1] != AandeBeurt && Bord[rijZet - 1, kolomZet + 1] != Kleur.Geen)
+            {
+                mogelijkeDoelwitten.Enqueue(new int[] { rijZet - 1, kolomZet + 1 });
+            }
+            if (Bord[rijZet + 1, kolomZet - 1] != AandeBeurt && Bord[rijZet + 1, kolomZet - 1] != Kleur.Geen)
+            {
+                mogelijkeDoelwitten.Enqueue(new int[] { rijZet + 1, kolomZet - 1 });
+            }
+
+
+            return false;
+        }
+
+        public Spel()
+        {
+            Bord = new Kleur[8,8];
         }
     }
 }
