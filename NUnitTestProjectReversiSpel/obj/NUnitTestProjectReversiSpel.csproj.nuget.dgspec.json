@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nick\\source\\repos\\ReversiRestApi\\NUnitTestProjectReversiSpel\\NUnitTestProjectReversiSpel.csproj": {}
+    "C:\\Users\\nickv\\Source\\Repos\\ReversiRestApi\\NUnitTestProjectReversiSpel\\NUnitTestProjectReversiSpel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nick\\source\\repos\\ReversiRestApi\\NUnitTestProjectReversiSpel\\NUnitTestProjectReversiSpel.csproj": {
+    "C:\\Users\\nickv\\Source\\Repos\\ReversiRestApi\\NUnitTestProjectReversiSpel\\NUnitTestProjectReversiSpel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nick\\source\\repos\\ReversiRestApi\\NUnitTestProjectReversiSpel\\NUnitTestProjectReversiSpel.csproj",
+        "projectUniqueName": "C:\\Users\\nickv\\Source\\Repos\\ReversiRestApi\\NUnitTestProjectReversiSpel\\NUnitTestProjectReversiSpel.csproj",
         "projectName": "NUnitTestProjectReversiSpel",
-        "projectPath": "C:\\Users\\Nick\\source\\repos\\ReversiRestApi\\NUnitTestProjectReversiSpel\\NUnitTestProjectReversiSpel.csproj",
-        "packagesPath": "C:\\Users\\Nick\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nick\\source\\repos\\ReversiRestApi\\NUnitTestProjectReversiSpel\\obj\\",
+        "projectPath": "C:\\Users\\nickv\\Source\\Repos\\ReversiRestApi\\NUnitTestProjectReversiSpel\\NUnitTestProjectReversiSpel.csproj",
+        "packagesPath": "C:\\Users\\nickv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nickv\\Source\\Repos\\ReversiRestApi\\NUnitTestProjectReversiSpel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nick\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nickv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -31,8 +32,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Nick\\source\\repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj": {
-                "projectPath": "C:\\Users\\Nick\\source\\repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj"
+              "C:\\Users\\nickv\\Source\\Repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj": {
+                "projectPath": "C:\\Users\\nickv\\Source\\Repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj"
               }
             }
           }
@@ -79,20 +80,21 @@
         }
       }
     },
-    "C:\\Users\\Nick\\source\\repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj": {
+    "C:\\Users\\nickv\\Source\\Repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nick\\source\\repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj",
+        "projectUniqueName": "C:\\Users\\nickv\\Source\\Repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj",
         "projectName": "ReversiRestApi",
-        "projectPath": "C:\\Users\\Nick\\source\\repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj",
-        "packagesPath": "C:\\Users\\Nick\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nick\\source\\repos\\ReversiRestApi\\ReversiRestApi\\obj\\",
+        "projectPath": "C:\\Users\\nickv\\Source\\Repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj",
+        "packagesPath": "C:\\Users\\nickv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nickv\\Source\\Repos\\ReversiRestApi\\ReversiRestApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nick\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nickv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

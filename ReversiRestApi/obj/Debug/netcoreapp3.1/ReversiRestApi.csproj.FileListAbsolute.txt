@@ -3,3 +3,8 @@ C:\Users\Nick\source\repos\ReversiRestApi\ReversiRestApi\obj\Debug\netcoreapp3.1
 C:\Users\Nick\source\repos\ReversiRestApi\ReversiRestApi\obj\Debug\netcoreapp3.1\ReversiRestApi.AssemblyInfo.cs
 C:\Users\Nick\source\repos\ReversiRestApi\ReversiRestApi\obj\Debug\netcoreapp3.1\ReversiRestApi.csproj.CoreCompileInputs.cache
 C:\Users\Nick\source\repos\ReversiRestApi\ReversiRestApi\obj\Debug\netcoreapp3.1\ReversiRestApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\nickv\Source\Repos\ReversiRestApi\ReversiRestApi\obj\Debug\netcoreapp3.1\ReversiRestApi.csprojAssemblyReference.cache
+C:\Users\nickv\Source\Repos\ReversiRestApi\ReversiRestApi\obj\Debug\netcoreapp3.1\ReversiRestApi.AssemblyInfoInputs.cache
+C:\Users\nickv\Source\Repos\ReversiRestApi\ReversiRestApi\obj\Debug\netcoreapp3.1\ReversiRestApi.AssemblyInfo.cs
+C:\Users\nickv\Source\Repos\ReversiRestApi\ReversiRestApi\obj\Debug\netcoreapp3.1\ReversiRestApi.csproj.CoreCompileInputs.cache
+C:\Users\nickv\Source\Repos\ReversiRestApi\ReversiRestApi\obj\Debug\netcoreapp3.1\ReversiRestApi.MvcApplicationPartsAssemblyInfo.cache

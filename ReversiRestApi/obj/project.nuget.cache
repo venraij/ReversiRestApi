@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wLSxFevOfvGDImz3VYHcTNWbphgkPzSjqAII53RjudCY7J6pgj0HMUIxpkqyGhq8Sa1ubdgJ675cUhW5o7CFtg==",
+  "dgSpecHash": "gahH9/ct63qiM3JdV6EmRPyikm4xhuCA8aq7mO2DCu9pMTmKzw3BoNyaDPcP9Y+EzAzPXjkIGgPl5zB86CRvCw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nick\\source\\repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj",
+  "projectFilePath": "C:\\Users\\nickv\\Source\\Repos\\ReversiRestApi\\ReversiRestApi\\ReversiRestApi.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
