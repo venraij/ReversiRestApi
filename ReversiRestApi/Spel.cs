@@ -103,60 +103,6 @@ namespace ReversiRestApi
                 }
             }
 
-            int afstand = 0;
-            bool andereKleurTussen = false;
-            for (int y = rijZet - 1; y > 0; y--)
-            {
-                afstand++;
-                if (Bord[y, kolomZet + afstand] == AandeBeurt)
-                {
-                    if (andereKleurTussen == true)
-                    {
-                        return true;
-                    }
-                } else if (Bord[y, kolomZet + afstand] != Kleur.Geen)
-                {
-                    andereKleurTussen = true;
-                }
-            }
-
-            afstand = 0;
-            andereKleurTussen = false;
-            for (int y = rijZet + 1; y < 8; y++)
-            {
-                afstand++;
-                if (Bord[y, kolomZet - afstand] == AandeBeurt)
-                {
-                    if (andereKleurTussen == true)
-                    {
-                        return true;
-                    }
-                }
-                else if (Bord[y, kolomZet - afstand] != Kleur.Geen)
-                {
-                    andereKleurTussen = true;
-                }
-            }
-
-            //afstand = 0;
-            //andereKleurTussen = false;
-            //for (int x = kolomZet + 1; x < 8; x++)
-            //{
-            //    afstand++;
-            //    if (Bord[rijZet + afstand, x] == AandeBeurt)
-            //    {
-            //        if (andereKleurTussen == true)
-            //        {
-            //            return true;
-            //        }
-            //    }
-            //    else if (Bord[rijZet + afstand, x] != Kleur.Geen)
-            //    {
-            //        andereKleurTussen = true;
-            //    }
-            //}
-
-
             return false;
         }
 
