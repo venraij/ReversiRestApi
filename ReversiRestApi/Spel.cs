@@ -17,12 +17,45 @@ namespace ReversiRestApi
 
         public bool Afgelopen()
         {
-            throw new NotImplementedException();
+            for (int y = 0; y < Bord.GetLength(0); y++)
+            {
+                for (int x = 0; x < Bord.GetLength(1); x++)
+                {
+                    if (ZetMogelijk(y,x) == true)
+                    {
+                        return false;
+                    }
+                    if (ZetMogelijk(y, x) == true)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            foreach (Kleur plek in Bord)
+            {
+                if (plek == Kleur.Geen)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         public bool DoeZet(int rijZet, int kolomZet)
         {
-            throw new NotImplementedException();
+            if (rijZet >= Bord.GetLength(0) || kolomZet >= Bord.GetLength(1))
+            {
+                return false;
+            }
+
+            if (Bord[rijZet, kolomZet] != Kleur.Geen)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public Kleur OverwegendeKleur()
@@ -37,7 +70,7 @@ namespace ReversiRestApi
 
         public bool ZetMogelijk(int rijZet, int kolomZet)
         {
-            if (rijZet > 7 || kolomZet > 7)
+            if (rijZet >= Bord.GetLength(0) || kolomZet >= Bord.GetLength(1))
             {
                 return false;
             }
@@ -47,7 +80,7 @@ namespace ReversiRestApi
                 return false;
             }
 
-            for (int i = rijZet; i < 8; i++)
+            for (int i = rijZet; i < Bord.GetLength(0); i++)
             {
                 if (Bord[i, kolomZet] == AandeBeurt)
                 {
@@ -75,7 +108,7 @@ namespace ReversiRestApi
                 }
             }
 
-            for (int i = kolomZet; i < 8; i++)
+            for (int i = kolomZet; i < Bord.GetLength(0); i++)
             {
                 if (Bord[rijZet, i] == AandeBeurt)
                 {
