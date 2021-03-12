@@ -103,6 +103,50 @@ namespace ReversiRestApi
                 }
             }
 
+            int x = kolomZet + 1;
+            bool tegenGekomen = false;
+            for (int y = rijZet -1; y > 0; y--)
+            {
+                if (Bord[y, x] == AandeBeurt && tegenGekomen == true)
+                {
+                    return true;
+                } else if (Bord[y, x] != AandeBeurt && Bord[y, x] != Kleur.Geen)
+                {
+                    tegenGekomen = true;
+                }
+                x++;
+            }
+
+            x = kolomZet + 1;
+            tegenGekomen = false;
+            for (int y = rijZet + 1; y < 8; y++)
+            {
+                if (Bord[y, x] == AandeBeurt && tegenGekomen == true)
+                {
+                    return true;
+                }
+                else if (Bord[y, x] != AandeBeurt && Bord[y, x] != Kleur.Geen)
+                {
+                    tegenGekomen = true;
+                }
+                x++;
+            }
+
+            //x = kolomZet - 1;
+            //tegenGekomen = false;
+            //for (int y = rijZet - 1; y > 0; y--)
+            //{
+            //    if (Bord[y, x] == AandeBeurt && tegenGekomen == true)
+            //    {
+            //        return true;
+            //    }
+            //    else if (Bord[y, x] != AandeBeurt && Bord[y, x] != Kleur.Geen)
+            //    {
+            //        tegenGekomen = true;
+            //    }
+            //    x--;
+            //}
+
             return false;
         }
 
