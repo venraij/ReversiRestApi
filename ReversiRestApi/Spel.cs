@@ -17,7 +17,7 @@ namespace ReversiRestApi
 
         public bool Afgelopen()
         {
-            
+            throw new NotImplementedException();
         }
 
         public bool DoeZet(int rijZet, int kolomZet)
@@ -47,36 +47,114 @@ namespace ReversiRestApi
                 return false;
             }
 
-            Queue<Array> mogelijkeDoelwitten = new Queue<Array>();
+            for (int i = rijZet; i < 8; i++)
+            {
+                if (Bord[i, kolomZet] == AandeBeurt)
+                {
+                    for (int a = rijZet; a < i; a++)
+                    {
+                        if (Bord[a, kolomZet] != AandeBeurt && Bord[a, kolomZet] != Kleur.Geen)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
 
-            if (Bord[rijZet + 1, kolomZet] != AandeBeurt && Bord[rijZet + 1, kolomZet] != Kleur.Geen) {
-                mogelijkeDoelwitten.Enqueue(new int[] {rijZet + 1, kolomZet});
-            }
-            if (Bord[rijZet - 1, kolomZet] != AandeBeurt && Bord[rijZet - 1, kolomZet] != Kleur.Geen) {
-                mogelijkeDoelwitten.Enqueue(new int[] { rijZet - 1, kolomZet });
-            }
-            if (Bord[rijZet, kolomZet + 1] != AandeBeurt && Bord[rijZet, kolomZet + 1] != Kleur.Geen) {
-                mogelijkeDoelwitten.Enqueue(new int[] { rijZet, kolomZet + 1 });
-            }
-            if (Bord[rijZet, kolomZet - 1] != AandeBeurt && Bord[rijZet, kolomZet - 1] != Kleur.Geen) {
-                mogelijkeDoelwitten.Enqueue(new int[] { rijZet, kolomZet - 1 });
-            }
-            if (Bord[rijZet - 1, kolomZet - 1] != AandeBeurt && Bord[rijZet - 1, kolomZet - 1] != Kleur.Geen)
+            for (int i = rijZet; i >= 0; i--)
             {
-                mogelijkeDoelwitten.Enqueue(new int[] { rijZet - 1, kolomZet - 1 });
+                if (Bord[i, kolomZet] == AandeBeurt)
+                {
+                    for (int a = rijZet; a > i; a--)
+                    {
+                        if (Bord[a, kolomZet] != AandeBeurt && Bord[a, kolomZet] != Kleur.Geen)
+                        {
+                            return true;
+                        }
+                    }
+                }
             }
-            if (Bord[rijZet + 1, kolomZet + 1] != AandeBeurt && Bord[rijZet + 1, kolomZet + 1] != Kleur.Geen)
+
+            for (int i = kolomZet; i < 8; i++)
             {
-                mogelijkeDoelwitten.Enqueue(new int[] { rijZet + 1, kolomZet + 1 });
+                if (Bord[rijZet, i] == AandeBeurt)
+                {
+                    for (int a = kolomZet; a < i; a++)
+                    {
+                        if (Bord[rijZet, a] != AandeBeurt && Bord[rijZet, a] != Kleur.Geen)
+                        {
+                            return true;
+                        }
+                    }
+                }
             }
-            if (Bord[rijZet - 1, kolomZet + 1] != AandeBeurt && Bord[rijZet - 1, kolomZet + 1] != Kleur.Geen)
+
+            for (int i = kolomZet; i >= 0; i--)
             {
-                mogelijkeDoelwitten.Enqueue(new int[] { rijZet - 1, kolomZet + 1 });
+                if (Bord[rijZet, i] == AandeBeurt)
+                {
+                    for (int a = kolomZet; a > i; a--)
+                    {
+                        if (Bord[rijZet, a] != AandeBeurt && Bord[rijZet, a] != Kleur.Geen)
+                        {
+                            return true;
+                        }
+                    }
+                }
             }
-            if (Bord[rijZet + 1, kolomZet - 1] != AandeBeurt && Bord[rijZet + 1, kolomZet - 1] != Kleur.Geen)
+
+            int afstand = 0;
+            bool andereKleurTussen = false;
+            for (int y = rijZet - 1; y > 0; y--)
             {
-                mogelijkeDoelwitten.Enqueue(new int[] { rijZet + 1, kolomZet - 1 });
+                afstand++;
+                if (Bord[y, kolomZet + afstand] == AandeBeurt)
+                {
+                    if (andereKleurTussen == true)
+                    {
+                        return true;
+                    }
+                } else if (Bord[y, kolomZet + afstand] != Kleur.Geen)
+                {
+                    andereKleurTussen = true;
+                }
             }
+
+            afstand = 0;
+            andereKleurTussen = false;
+            for (int y = rijZet + 1; y < 8; y++)
+            {
+                afstand++;
+                if (Bord[y, kolomZet - afstand] == AandeBeurt)
+                {
+                    if (andereKleurTussen == true)
+                    {
+                        return true;
+                    }
+                }
+                else if (Bord[y, kolomZet - afstand] != Kleur.Geen)
+                {
+                    andereKleurTussen = true;
+                }
+            }
+
+            //afstand = 0;
+            //andereKleurTussen = false;
+            //for (int x = kolomZet + 1; x < 8; x++)
+            //{
+            //    afstand++;
+            //    if (Bord[rijZet + afstand, x] == AandeBeurt)
+            //    {
+            //        if (andereKleurTussen == true)
+            //        {
+            //            return true;
+            //        }
+            //    }
+            //    else if (Bord[rijZet + afstand, x] != Kleur.Geen)
+            //    {
+            //        andereKleurTussen = true;
+            //    }
+            //}
 
 
             return false;
@@ -85,6 +163,11 @@ namespace ReversiRestApi
         public Spel()
         {
             Bord = new Kleur[8,8];
+
+            Bord[3, 3] = Kleur.Wit;
+            Bord[4, 4] = Kleur.Wit;
+            Bord[4, 3] = Kleur.Zwart;
+            Bord[3, 4] = Kleur.Zwart;
         }
     }
 }
