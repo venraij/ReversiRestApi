@@ -1,14 +1,18 @@
-image: Visual Studio 2015
+on: [push]
+  jobs:
+    env:
+      CODECOV_TOKEN='84d62475-db52-4044-854d-e2c84ea781e1'
+    image: Visual Studio 2015
 
-before_build:
-- nuget restore
-- choco install opencover.portable
-- choco install codecov
+    before_build:
+    - nuget restore
+    - choco install opencover.portable
+    - choco install codecov
 
-build:
-  project: ReversiRestApi.sln
-  verbosity: minimal
+    build:
+      project: ReversiRestApi.sln
+      verbosity: minimal
 
-test_script:
-- OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\NUnitTestProjectReversiSpel\bin\Debug\NUnitTestProjectReversiSpel.dll -noshadow" -filter:"+[ReversiRestApi*]* -[NUnitTestProjectReversiSpel*]*" -output:".\ReversiRestApi_coverage.xml"
-- codecov -f "ReversiRestApi_coverage.xml"
+    test_script:
+    - OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\NUnitTestProjectReversiSpel\bin\Debug\NUnitTestProjectReversiSpel.dll -noshadow" -filter:"+[ReversiRestApi*]* -[NUnitTestProjectReversiSpel*]*" -output:".\ReversiRestApi_coverage.xml"
+    - codecov -f "ReversiRestApi_coverage.xml"
