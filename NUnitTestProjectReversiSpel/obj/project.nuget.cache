@@ -1,13 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "nV9MlAbDVpQXMQ86ji7Y2QeExoQKUxz29YZkUeLvuM/arSRFZD790fcV7fcpX5Mw2TGMa3f7Q0AWZCyi8wxqaA==",
+  "dgSpecHash": "WRMF4qhvkpUaWMQueN4c/CZVTehL3S+HaLJvNyQN+4LlnbwFd/3jzHBqtgqAIJKCY5oTyb05/7GGQtYkwQtH9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\nickv\\source\\repos\\ReversiRestApi\\NUnitTestProjectReversiSpel\\NUnitTestProjectReversiSpel.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\nickv\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.13\\microsoft.aspnetcore.jsonpatch.3.1.13.nupkg.sha512",
-    "C:\\Users\\nickv\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.13\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.13.nupkg.sha512",
     "C:\\Users\\nickv\\.nuget\\packages\\microsoft.codecoverage\\16.9.1\\microsoft.codecoverage.16.9.1.nupkg.sha512",
-    "C:\\Users\\nickv\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\nickv\\.nuget\\packages\\microsoft.dotnet.internalabstractions\\1.0.0\\microsoft.dotnet.internalabstractions.1.0.0.nupkg.sha512",
     "C:\\Users\\nickv\\.nuget\\packages\\microsoft.net.test.sdk\\16.9.1\\microsoft.net.test.sdk.16.9.1.nupkg.sha512",
     "C:\\Users\\nickv\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
@@ -18,7 +15,6 @@
     "C:\\Users\\nickv\\.nuget\\packages\\microsoft.win32.registry\\4.3.0\\microsoft.win32.registry.4.3.0.nupkg.sha512",
     "C:\\Users\\nickv\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Users\\nickv\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\nickv\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\nickv\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",
     "C:\\Users\\nickv\\.nuget\\packages\\nunit\\3.13.1\\nunit.3.13.1.nupkg.sha512",
     "C:\\Users\\nickv\\.nuget\\packages\\nunit3testadapter\\3.17.0\\nunit3testadapter.3.17.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using NUnit.Framework;
-using ReversiRestApi;
-using ReversiRestApi.Controllers;
+using ReversiRestApiMVC;
+using ReversiRestApiMVC.Controllers;
 
 namespace NUnitTestProjectReversiSpel
 {

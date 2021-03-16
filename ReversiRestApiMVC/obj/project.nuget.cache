@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "tLW9yhUi//f2RkJ5XfVAtIgnSzYeA+FkVLUp6zwPrwD1JR2zaFDdPSDsk7/zigjU13XDrMI0+WxiC5gafppUTg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nickv\\source\\repos\\ReversiRestApi\\ReversiRestApiMVC\\ReversiRestApiMVC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nickv\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
