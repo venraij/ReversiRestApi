@@ -23,3 +23,8 @@ C:\Users\nickv\Source\Repos\ReversiRestApi\ReversiRestApi\obj\Debug\netcoreapp3.
 C:\Users\nickv\Source\Repos\ReversiRestApi\ReversiRestApi\obj\Debug\netcoreapp3.1\ReversiRestApi.dll
 C:\Users\nickv\Source\Repos\ReversiRestApi\ReversiRestApi\obj\Debug\netcoreapp3.1\ReversiRestApi.pdb
 C:\Users\nickv\Source\Repos\ReversiRestApi\ReversiRestApi\obj\Debug\netcoreapp3.1\ReversiRestApi.genruntimeconfig.cache
+C:\Users\nickv\source\repos\ReversiRestApi\ReversiRestApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\nickv\source\repos\ReversiRestApi\ReversiRestApi\obj\Debug\netcoreapp3.1\ReversiRestApi.csproj.CopyComplete
+C:\Users\nickv\source\repos\ReversiRestApi\ReversiRestApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\nickv\source\repos\ReversiRestApi\ReversiRestApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\nickv\source\repos\ReversiRestApi\ReversiRestApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
