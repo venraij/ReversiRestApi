@@ -47,6 +47,7 @@ namespace ReversiRestApi
 
             app.UseEndpoints(endpoints =>
             {
+                
                 endpoints.MapControllers();
             });
         }
