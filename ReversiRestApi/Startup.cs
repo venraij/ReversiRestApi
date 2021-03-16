@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ReversiRestApi.Controllers;
 
 namespace ReversiRestApi
 {
@@ -26,6 +27,8 @@ namespace ReversiRestApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton<SpelController>();
+            services.AddSingleton<ISpelRepository, SpelRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
