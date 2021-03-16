@@ -17,26 +17,27 @@ namespace ReversiRestApi
 
         public bool Afgelopen()
         {
-            for (int y = 0; y < Bord.GetLength(0); y++)
-            {
-                for (int x = 0; x < Bord.GetLength(1); x++)
-                {
-                    if (ZetMogelijk(y,x) == true)
-                    {
-                        return false;
-                    }
-                    if (ZetMogelijk(y, x) == true)
-                    {
-                        return false;
-                    }
-                }
-            }
+            bool bordVol = true;
 
             foreach (Kleur plek in Bord)
             {
                 if (plek == Kleur.Geen)
                 {
-                    return false;
+                    bordVol = false;
+                }
+            }
+
+            if (bordVol == false)
+            {
+                for (int y = 0; y < Bord.GetLength(0) - 1; y++)
+                {
+                    for (int x = 0; x < Bord.GetLength(1) - 1; x++)
+                    {
+                        if (ZetMogelijk(y, x) == true)
+                        {
+                            return false;
+                        }
+                    }
                 }
             }
 
@@ -55,17 +56,179 @@ namespace ReversiRestApi
                 return false;
             }
 
-            return true;
+            if (ZetMogelijk(rijZet, kolomZet))
+            {
+                Bord[rijZet, kolomZet] = AandeBeurt;
+
+                for (int i = rijZet; i < Bord.GetLength(0); i++)
+                {
+                    if (Bord[i, kolomZet] == AandeBeurt)
+                    {
+                        for (int a = rijZet; a < i; a++)
+                        {
+                            if (Bord[a, kolomZet] != AandeBeurt && Bord[a, kolomZet] != Kleur.Geen)
+                            {
+                                Bord[a, kolomZet] = AandeBeurt;
+                            }
+                        }
+                    }
+                }
+
+                for (int i = rijZet; i >= 0; i--)
+                {
+                    if (Bord[i, kolomZet] == AandeBeurt)
+                    {
+                        for (int a = rijZet; a > i; a--)
+                        {
+                            if (Bord[a, kolomZet] != AandeBeurt && Bord[a, kolomZet] != Kleur.Geen)
+                            {
+                                Bord[a, kolomZet] = AandeBeurt;
+                            }
+                        }
+                    }
+                }
+
+                for (int i = kolomZet; i < Bord.GetLength(0); i++)
+                {
+                    if (Bord[rijZet, i] == AandeBeurt)
+                    {
+                        for (int a = kolomZet; a < i; a++)
+                        {
+                            if (Bord[rijZet, a] != AandeBeurt && Bord[rijZet, a] != Kleur.Geen)
+                            {
+                                Bord[rijZet, a] = AandeBeurt;
+                            }
+                        }
+                    }
+                }
+
+                for (int i = kolomZet; i >= 0; i--)
+                {
+                    if (Bord[rijZet, i] == AandeBeurt)
+                    {
+                        for (int a = kolomZet; a > i; a--)
+                        {
+                            if (Bord[rijZet, a] != AandeBeurt && Bord[rijZet, a] != Kleur.Geen)
+                            {
+                                Bord[rijZet, a] = AandeBeurt;
+                            }
+                        }
+                    }
+                }
+
+                for (int i = rijZet + 1; i < Bord.GetLength(0); i++)
+                {
+                    if (Bord[i, i] == AandeBeurt)
+                    {
+                        for (int a = rijZet + 1; a < i; a++)
+                        {
+                            if (Bord[a, a] != AandeBeurt && Bord[a, a] != Kleur.Geen)
+                            {
+                                Bord[a, a] = AandeBeurt;
+                            }
+                        }
+                    }
+                }
+
+                for (int i = rijZet - 1; i > 0; i--)
+                {
+                    if (Bord[i, i] == AandeBeurt)
+                    {
+                        for (int a = rijZet - 1; a > i; a--)
+                        {
+                            if (Bord[a, a] != AandeBeurt && Bord[a, a] != Kleur.Geen)
+                            {
+                                Bord[a, a] = AandeBeurt;
+                            }
+                        }
+                    }
+                }
+
+                for (int i = rijZet - 1; i > 0; i--)
+                {
+                    if (Bord[i, (Bord.GetLength(1) - 1) - i] == AandeBeurt)
+                    {
+                        for (int a = rijZet - 1; a > i; a--)
+                        {
+                            if (Bord[a, (Bord.GetLength(1) - 1) - a] != AandeBeurt && Bord[a, (Bord.GetLength(1) - 1) - a] != Kleur.Geen)
+                            {
+                                Bord[a, (Bord.GetLength(1) - 1) - a] = AandeBeurt;
+                            }
+                        }
+                    }
+                }
+
+                for (int i = rijZet + 1; i < Bord.GetLength(0); i++)
+                {
+                    if (Bord[i, (Bord.GetLength(1) - 1) - i] == AandeBeurt)
+                    {
+                        for (int a = rijZet + 1; a < i; a++)
+                        {
+                            if (Bord[a, (Bord.GetLength(1) - 1) - a] != AandeBeurt && Bord[a, (Bord.GetLength(1) - 1) - a] != Kleur.Geen)
+                            {
+                                Bord[a, (Bord.GetLength(1) - 1) - a] = AandeBeurt;
+                            }
+                        }
+                    }
+                }
+
+                if (AandeBeurt == Kleur.Zwart)
+                {
+                    AandeBeurt = Kleur.Wit;
+                }
+                else
+                {
+                    AandeBeurt = Kleur.Zwart;
+                }
+
+                return true;
+            }
+
+            return false;
         }
 
         public Kleur OverwegendeKleur()
         {
-            throw new NotImplementedException();
+            int zwart = 0;
+            int wit = 0;
+
+            for (int y = 0; y < Bord.GetLength(0) - 1; y++)
+            {
+                for (int x = 0; x < Bord.GetLength(1) - 1; x++)
+                {
+                    if (Bord[y,x] == Kleur.Zwart)
+                    {
+                        zwart++;
+                    } else if (Bord[y, x] == Kleur.Wit)
+                    {
+                        wit++;
+                    }
+                }
+            }
+
+            if (wit > zwart)
+            {
+                return Kleur.Wit;
+            } else if (wit < zwart)
+            {
+                return Kleur.Zwart;
+            } else
+            {
+                return Kleur.Geen;
+            }
         }
 
         public bool Pas()
         {
-            throw new NotImplementedException();
+            if (AandeBeurt == Kleur.Zwart)
+            {
+                AandeBeurt = Kleur.Wit;
+                return true;
+            } else
+            {
+                AandeBeurt = Kleur.Zwart;
+                return true;
+            }
         }
 
         public bool ZetMogelijk(int rijZet, int kolomZet)
@@ -133,6 +296,69 @@ namespace ReversiRestApi
                             return true;
                         }
                     }
+                }
+            }
+
+            bool mogelijk = false;
+            for (int i = rijZet; i > 0; i--)
+            {
+                if (Bord[i - 1, (Bord.GetLength(1) - i)] == AandeBeurt)
+                {
+                    if (mogelijk == true)
+                    {
+                        return true;
+                    }
+                } else if (Bord[i - 1, (Bord.GetLength(1) - i)] != Kleur.Geen)
+                {
+                    mogelijk = true;
+                }
+            }
+
+            mogelijk = false;
+            for (int i = rijZet; i < 7; i++)
+            {
+                if (Bord[i + 1, (i + 1)] == AandeBeurt)
+                {
+                    if (mogelijk == true)
+                    {
+                        return true;
+                    }
+                }
+                else if (Bord[i + 1, (i + 1)] != Kleur.Geen)
+                {
+                    mogelijk = true;
+                }
+            }
+
+            mogelijk = false;
+            for (int i = rijZet; i > 0; i--)
+            {
+                if (Bord[i - 1, (i - 1)] == AandeBeurt)
+                {
+                    if (mogelijk == true)
+                    {
+                        return true;
+                    }
+                }
+                else if (Bord[i - 1, (i - 1)] != Kleur.Geen)
+                {
+                    mogelijk = true;
+                }
+            }
+
+            mogelijk = false;
+            for (int i = rijZet; i < 7; i++)
+            {
+                if (Bord[i + 1, ((Bord.GetLength(1) - 1) - (i + 1))] == AandeBeurt)
+                {
+                    if (mogelijk == true)
+                    {
+                        return true;
+                    }
+                }
+                else if (Bord[i + 1, ((Bord.GetLength(1) - 1) - (i + 1))] != Kleur.Geen)
+                {
+                    mogelijk = true;
                 }
             }
 
