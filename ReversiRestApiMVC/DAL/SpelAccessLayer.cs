@@ -35,7 +35,7 @@ namespace ReversiRestApiMVC
             {
                 sqlCon.Open();
                 SqlCommand sqlCmd = sqlCon.CreateCommand();
-                sqlCmd.CommandText = "SELECT GUID, Omschrijving, Speler1token, Speler2token WHERE GUID=@spelToken";
+                sqlCmd.CommandText = "SELECT GUID, Omschrijving, Speler1token, Speler2token FROM Spel WHERE GUID=@spelToken";
                 sqlCmd.Parameters.Add("@spelToken",SqlDbType.VarChar).Value = spelToken;
                 SqlDataReader rdr = sqlCmd.ExecuteReader();
 
@@ -52,7 +52,7 @@ namespace ReversiRestApiMVC
         public List<Spel> GetSpellen()
         {
             List<Spel> spelList = new List<Spel>();
-            string sqlQuery = "SELECT GUID, Omschrijving, Speler1token, Speler2token";
+            string sqlQuery = "SELECT GUID, Omschrijving, Speler1token, Speler2token FROM Spel";
 
             using (SqlConnection sqlCon = new SqlConnection(ConnectionString))
             {

@@ -18,10 +18,18 @@ namespace ReversiRestApiMVC.Controllers
             iRepository = repository;
         }
         // GET api/spel
+        //[HttpGet]
+        //public ActionResult<IEnumerable<string>> GetSpelOmschrijvingenVanSpellenMetWachtendeSpeler()
+        //{
+        //    return Content(iRepository.GetSpellen().Find(spel => spel.Speler2Token == null).Omschrijving);
+        //}
+
         [HttpGet]
-        public ActionResult<IEnumerable<string>> GetSpelOmschrijvingenVanSpellenMetWachtendeSpeler()
+        public ActionResult<IEnumerable<Spel>> GetSpellen()
         {
-            return Content(iRepository.GetSpellen().Find(spel => spel.Speler2Token == null).Omschrijving);
+            IEnumerable<Spel> spellen = iRepository.GetSpellen();
+
+            return Content(JsonConvert.SerializeObject(spellen, Formatting.Indented));
         }
         
         // GET api/spel
