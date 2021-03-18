@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ReversiRestApiMVC.Controllers;
+using ReversiRestApiMVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace ReversiRestApiMVC
         {
             services.AddControllersWithViews();
             services.AddSingleton<SpelController>();
-            services.AddSingleton<ISpelRepository, SpelRepository>();
+            services.AddSingleton<ISpelRepository, SpelAccessLayer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
