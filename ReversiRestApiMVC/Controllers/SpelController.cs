@@ -1,14 +1,16 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using ReversiRestApiMVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace ReversiRestApiMVC.Controllers
 {
-    [Route("api/Spel")]
+    [Route("api/spel")]
     [ApiController]
     public class SpelController : ControllerBase
     {
@@ -53,16 +55,17 @@ namespace ReversiRestApiMVC.Controllers
 
         // POST api/spel
         [HttpPost]
-        public ActionResult<string> PostSpel(string spelerToken, string omschrijving)
+        public ActionResult<Spel> PostSpel([FromBody] SpelJson spelJson)
         {
             Spel spel = new Spel();
-            spel.Speler1Token = spelerToken;
-            spel.Omschrijving = omschrijving;
+            spel.Omschrijving = spelJson.Omschrijving;
+            spel.Speler1Token = spelJson.Speler1Token;
+
             spel.Token = Guid.NewGuid().ToString();
 
             iRepository.AddSpel(spel);
 
-            return Content(spel.Token);
+            return CreatedAtAction("New Game",JsonConvert.SerializeObject(spel));
         }
 
         // GET api/spel/beurt
