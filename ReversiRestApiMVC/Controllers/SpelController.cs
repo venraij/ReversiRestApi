@@ -36,7 +36,7 @@ namespace ReversiRestApiMVC.Controllers
         
         // GET api/spel
         [HttpGet("{token}")]
-        public ActionResult<Spel> GetSpelBySpelToken(string token)
+        public ActionResult<Spel> GetSpelBySpelToken([FromQuery] string token)
         {
             Spel spel = iRepository.GetSpel(token);
 
@@ -50,7 +50,7 @@ namespace ReversiRestApiMVC.Controllers
                 }
             }
 
-            return Content(JsonConvert.SerializeObject(spel, Formatting.Indented).ToString());
+            return Ok(JsonConvert.SerializeObject(spel, Formatting.Indented).ToString());
         }
 
         // POST api/spel
