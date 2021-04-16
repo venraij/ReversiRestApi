@@ -55,17 +55,19 @@ namespace ReversiRestApiMVC.Controllers
 
         // POST api/spel
         [HttpPost]
-        public ActionResult<Spel> PostSpel([FromBody] SpelJson spelJson)
+        public ActionResult<SpelJson> PostSpel([FromBody] SpelJson spelJson)
         {
             Spel spel = new Spel();
             spel.Omschrijving = spelJson.Omschrijving;
             spel.Speler1Token = spelJson.Speler1Token;
-
+            spelJson.Bord = JsonConvert.SerializeObject(spel.Bord);
+            
             spel.Token = Guid.NewGuid().ToString();
+            spelJson.Token = spel.Token;
 
             iRepository.AddSpel(spel);
 
-            return CreatedAtAction("New Game",JsonConvert.SerializeObject(spel));
+            return Ok(JsonConvert.SerializeObject(spelJson));
         }
 
         // GET api/spel/beurt

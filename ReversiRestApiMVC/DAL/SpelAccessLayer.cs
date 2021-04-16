@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace ReversiRestApiMVC
 {
     public class SpelAccessLayer : ISpelRepository
     {
-        private const string ConnectionString = @"Server=localhost;Database=ReversiDbRestApi;User Id=SA;Password=Tijger08!;;";
+        private const string ConnectionString = @"Server=localhost;Database=ReversiDbRestApi;User Id=SA;Password=NickAlmelo69!;";
 
         public void AddSpel(Spel spel)
         {
@@ -17,10 +18,11 @@ namespace ReversiRestApiMVC
             {
                 sqlCon.Open();
                 SqlCommand sqlCmd = sqlCon.CreateCommand();
-                sqlCmd.CommandText = "INSERT INTO Spel (GUID, Omschrijving, Speler1token) VALUES (@GUID, @Omschrijving, @Speler1token)";
+                sqlCmd.CommandText = "INSERT INTO Spel (GUID, Omschrijving, Speler1token, StringBord) VALUES (@GUID, @Omschrijving, @Speler1token, @StringBord)";
                 sqlCmd.Parameters.Add("@GUID", SqlDbType.VarChar).Value = spel.Token;
                 sqlCmd.Parameters.Add("@Omschrijving", SqlDbType.VarChar).Value = spel.Omschrijving;
                 sqlCmd.Parameters.Add("@Speler1token", SqlDbType.VarChar).Value = spel.Speler1Token;
+                sqlCmd.Parameters.Add("@StringBord", SqlDbType.VarChar).Value = JsonConvert.SerializeObject(spel.Bord);
                 sqlCmd.ExecuteNonQuery();
 
                 sqlCon.Close();

@@ -8,15 +8,6 @@
         public string Token { get; set; }
         public string Speler1Token { get; set; }
         public string Speler2Token { get; set; }
-        public string Bord { 
-            get
-            {
-                return bord;
-            }
-            set
-            {
-                bord = value.ToString();
-            }
-        }
+        public string Bord { get; set; }
     }
 }
