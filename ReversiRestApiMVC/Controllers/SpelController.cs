@@ -88,11 +88,12 @@ namespace ReversiRestApiMVC.Controllers
             {
                 spel.DoeZet(veld[0], veld[1]);
                 statusZet = "Succeeded";
-            } else
+            }
+            else
             {
                 statusZet = "Failed";
             }
-
+            
             return Content(statusZet);
         }
 

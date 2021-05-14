@@ -51,6 +51,21 @@ namespace ReversiRestApiMVC
             return spel;
         }
 
+        public void SaveSpel(Spel spel)
+        {
+            using (SqlConnection sqlCon = new SqlConnection())
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = sqlCon.CreateCommand();
+                sqlCmd.CommandText = "UPDATE Spel SET StringBord=@stringBord WHERE GUID=@spelToken";
+                string stringBord = JsonConvert.SerializeObject(spel.Bord);
+                sqlCmd.Parameters.Add("@stringBord",SqlDbType.VarChar).Value = stringBord;
+                sqlCmd.Parameters.Add("@spelToken",SqlDbType.VarChar).Value = spel.Token;
+                SqlDataReader rdr = sqlCmd.ExecuteReader();
+                sqlCon.Close();
+            }
+        }
+
         public List<Spel> GetSpellen()
         {
             List<Spel> spelList = new List<Spel>();
