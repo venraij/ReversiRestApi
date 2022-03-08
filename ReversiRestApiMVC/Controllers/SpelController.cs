@@ -26,6 +26,7 @@ namespace ReversiRestApiMVC.Controllers
         //    return Content(iRepository.GetSpellen().Find(spel => spel.Speler2Token == null).Omschrijving);
         //}
 
+        // GET api/spel
         [HttpGet]
         public ActionResult<IEnumerable<Spel>> GetSpellen()
         {
@@ -34,22 +35,19 @@ namespace ReversiRestApiMVC.Controllers
             return Content(JsonConvert.SerializeObject(spellen, Formatting.Indented));
         }
         
-        // GET api/spel
-        [HttpGet("{token}")]
+        // GET api/spel?token=token
+        [HttpGet("token")]
         public ActionResult<Spel> GetSpelBySpelToken([FromQuery] string token)
         {
             Spel spel = iRepository.GetSpel(token);
-
-            if (spel == null)
-            {
-                spel = iRepository.GetSpellen().Find(spel => spel.Speler1Token == token);
-
-                if (spel == null)
-                {
-                    spel = iRepository.GetSpellen().Find(spel => spel.Speler2Token == token);
-                }
-            }
-
+            return Ok(JsonConvert.SerializeObject(spel, Formatting.Indented).ToString());
+        }
+        
+        // GET api/spel?speler1Token=spelerToken
+        [HttpGet("spelerToken")]
+        public ActionResult<Spel> GetSpelBySpelerToken([FromQuery] string spelerToken)
+        {
+            Spel spel = iRepository.GetSpelBySpeler(spelerToken);
             return Ok(JsonConvert.SerializeObject(spel, Formatting.Indented).ToString());
         }
 

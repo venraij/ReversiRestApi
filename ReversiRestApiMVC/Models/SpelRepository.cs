@@ -32,6 +32,16 @@ namespace ReversiRestApiMVC
         {
             return Spellen.Find( spel => spel.Token == spelToken);
         }
+
+        public Spel GetSpelBySpeler(string spelerToken)
+        {
+            return Spellen.Find( spel => spel.Speler1Token == spelerToken || spel.Speler1Token == spelerToken);
+        }
+
+        public void SaveSpel(Spel spel)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
 

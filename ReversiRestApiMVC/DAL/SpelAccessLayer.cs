@@ -10,7 +10,7 @@ namespace ReversiRestApiMVC
 {
     public class SpelAccessLayer : ISpelRepository
     {
-        private const string ConnectionString = @"Server=localhost;Database=ReversiDbRestApi;User Id=SA;Password=NickAlmelo69!;";
+        private const string ConnectionString = @"Server=localhost\sqlexpress;Database=ReversiDbRestApi;User Id=nick;Password=NickAlmelo69!;";
 
         public void AddSpel(Spel spel)
         {
@@ -45,6 +45,32 @@ namespace ReversiRestApiMVC
                 spel.Omschrijving = rdr["Omschrijving"].ToString();
                 spel.Speler1Token = rdr["Speler1token"].ToString();
                 spel.Speler2Token = rdr["Speler2token"].ToString();
+
+                sqlCon.Close();
+            }
+            return spel;
+        }
+        
+        public Spel GetSpelBySpeler(string spelerToken)
+        {
+            Spel spel = new Spel();
+
+            using (SqlConnection sqlCon = new SqlConnection(ConnectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = sqlCon.CreateCommand();
+                sqlCmd.CommandText = "SELECT GUID, Omschrijving, Speler1token, Speler2token FROM Spel WHERE Speler1token=@speler1Token OR Speler2token=@speler1Token";
+                sqlCmd.Parameters.Add("@speler1Token",SqlDbType.VarChar).Value = spelerToken;
+                sqlCmd.Parameters.Add("@speler2Token",SqlDbType.VarChar).Value = spelerToken;
+                SqlDataReader rdr = sqlCmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    spel.Token = rdr["GUID"].ToString();
+                    spel.Omschrijving = rdr["Omschrijving"].ToString();
+                    spel.Speler1Token = rdr["Speler1token"].ToString();
+                    spel.Speler2Token = rdr["Speler2token"].ToString();
+                }
 
                 sqlCon.Close();
             }
