@@ -95,7 +95,7 @@ namespace ReversiRestApiMVC
         public List<Spel> GetSpellen()
         {
             List<Spel> spelList = new List<Spel>();
-            string sqlQuery = "SELECT GUID, Omschrijving, Speler1token, Speler2token FROM Spel";
+            string sqlQuery = "SELECT GUID, Omschrijving, Speler1token, Speler2token FROM Spel WHERE Speler2token IS NULL";
 
             using (SqlConnection sqlCon = new SqlConnection(ConnectionString))
             {

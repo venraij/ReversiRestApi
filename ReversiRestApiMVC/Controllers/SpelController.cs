@@ -19,12 +19,6 @@ namespace ReversiRestApiMVC.Controllers
         {
             iRepository = repository;
         }
-        // GET api/spel
-        //[HttpGet]
-        //public ActionResult<IEnumerable<string>> GetSpelOmschrijvingenVanSpellenMetWachtendeSpeler()
-        //{
-        //    return Content(iRepository.GetSpellen().Find(spel => spel.Speler2Token == null).Omschrijving);
-        //}
 
         // GET api/spel
         [HttpGet]
