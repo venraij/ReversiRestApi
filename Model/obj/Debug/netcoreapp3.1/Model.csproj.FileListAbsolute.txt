@@ -1,8 +1,0 @@
-C:\Users\nickv\source\repos\ReversiRestApi\Model\bin\Debug\netcoreapp3.1\Model.deps.json
-C:\Users\nickv\source\repos\ReversiRestApi\Model\bin\Debug\netcoreapp3.1\Model.dll
-C:\Users\nickv\source\repos\ReversiRestApi\Model\bin\Debug\netcoreapp3.1\Model.pdb
-C:\Users\nickv\source\repos\ReversiRestApi\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfoInputs.cache
-C:\Users\nickv\source\repos\ReversiRestApi\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfo.cs
-C:\Users\nickv\source\repos\ReversiRestApi\Model\obj\Debug\netcoreapp3.1\Model.csproj.CoreCompileInputs.cache
-C:\Users\nickv\source\repos\ReversiRestApi\Model\obj\Debug\netcoreapp3.1\Model.dll
-C:\Users\nickv\source\repos\ReversiRestApi\Model\obj\Debug\netcoreapp3.1\Model.pdb
