@@ -10,7 +10,7 @@ namespace ReversiRestApiMVC
 {
     public class SpelAccessLayer : ISpelRepository
     {
-        private const string ConnectionString = @"Server=localhost\sqlexpress;Database=ReversiDbRestApi;User Id=nick;Password=NickAlmelo69!;";
+        private const string ConnectionString = @"Server=localhost;Database=ReversiDbRestApi;User Id=SA;Password=NickAlmelo69;";
 
         public void AddSpel(Spel spel)
         {
