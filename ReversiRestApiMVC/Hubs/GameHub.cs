@@ -8,9 +8,9 @@ namespace ReversiRestApiMVC.Hubs
 {
     public class GameHub : Hub
     {
-        public async Task SendMessage(string user, string message)
+        public async Task Zet(string user, int[] coords)
         {
-            await Clients.All.SendAsync("ReceiveMessage", user, message);
+            await Clients.All.SendAsync("ReceiveMessage", user, coords);
         }
     }
 }

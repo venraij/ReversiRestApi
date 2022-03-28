@@ -59,7 +59,7 @@ namespace ReversiRestApiMVC.Controllers
 
             iRepository.AddSpel(spel);
 
-            return Ok(JsonConvert.SerializeObject(spelJson));
+            return CreatedAtAction(nameof(PostSpel), JsonConvert.SerializeObject(spelJson));
         }
 
         // GET api/spel/beurt
