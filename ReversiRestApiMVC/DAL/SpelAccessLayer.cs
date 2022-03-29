@@ -33,22 +33,35 @@ namespace ReversiRestApiMVC
         {
             Spel spel = new Spel();
 
-            using (SqlConnection sqlCon = new SqlConnection(ConnectionString))
+            try
             {
-                sqlCon.Open();
-                SqlCommand sqlCmd = sqlCon.CreateCommand();
-                sqlCmd.CommandText = "SELECT GUID, Omschrijving, Speler1token, Speler2token FROM Spel WHERE GUID=@spelToken";
-                sqlCmd.Parameters.Add("@spelToken",SqlDbType.VarChar).Value = spelToken;
-                SqlDataReader rdr = sqlCmd.ExecuteReader();
+                using (SqlConnection sqlCon = new SqlConnection(ConnectionString))
+                {
+                    sqlCon.Open();
+                    SqlCommand sqlCmd = sqlCon.CreateCommand();
+                    sqlCmd.CommandText =
+                        "SELECT GUID, Omschrijving, Speler1token, Speler2token FROM Spel WHERE GUID=@spelToken";
+                    sqlCmd.Parameters.Add("@spelToken", SqlDbType.VarChar).Value = spelToken;
+                    SqlDataReader rdr = sqlCmd.ExecuteReader();
 
-                spel.Token = rdr["GUID"].ToString();
-                spel.Omschrijving = rdr["Omschrijving"].ToString();
-                spel.Speler1Token = rdr["Speler1token"].ToString();
-                spel.Speler2Token = rdr["Speler2token"].ToString();
+                    if (rdr.Read())
+                    {
+                        spel.Token = rdr["GUID"].ToString();
+                        spel.Omschrijving = rdr["Omschrijving"].ToString();
+                        spel.Speler1Token = rdr["Speler1token"].ToString();
+                        spel.Speler2Token = rdr["Speler2token"].ToString();
 
-                sqlCon.Close();
+                        sqlCon.Close();
+                    }
+                }
+
+                return spel;
             }
-            return spel;
+            catch (SqlException error)
+            {
+                Console.Write(error.ToString());
+                return null;
+            }
         }
         
         public Spel GetSpelBySpeler(string spelerToken)

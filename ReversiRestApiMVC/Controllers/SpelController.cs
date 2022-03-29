@@ -34,7 +34,7 @@ namespace ReversiRestApiMVC.Controllers
         public ActionResult<Spel> GetSpelBySpelToken([FromQuery] string token)
         {
             Spel spel = iRepository.GetSpel(token);
-            return Ok(JsonConvert.SerializeObject(spel, Formatting.Indented).ToString());
+            return Ok(JsonConvert.SerializeObject(spel, Formatting.Indented));
         }
         
         // GET api/spel?speler1Token=spelerToken
@@ -42,7 +42,7 @@ namespace ReversiRestApiMVC.Controllers
         public ActionResult<Spel> GetSpelBySpelerToken([FromQuery] string spelerToken)
         {
             Spel spel = iRepository.GetSpelBySpeler(spelerToken);
-            return Ok(JsonConvert.SerializeObject(spel, Formatting.Indented).ToString());
+            return Ok(JsonConvert.SerializeObject(spel, Formatting.Indented));
         }
 
         // POST api/spel
@@ -62,16 +62,17 @@ namespace ReversiRestApiMVC.Controllers
             return CreatedAtAction(nameof(PostSpel), JsonConvert.SerializeObject(spelJson));
         }
 
-        // GET api/spel/beurt
-        [HttpGet("beurt/{spelToken}")]
-        public ActionResult<Kleur> GetSpelerAanDeBeurt(string spelToken)
+        // GET api/spel/beurt?token=token
+        [HttpGet("beurt")]
+        public ActionResult<Kleur> GetSpelerAanDeBeurt(string token)
         {
-            return Content(JsonConvert.SerializeObject(iRepository.GetSpel(spelToken).AandeBeurt, Formatting.Indented));
+            Spel spel = iRepository.GetSpel(token);
+            return Content(JsonConvert.SerializeObject(spel.AandeBeurt, Formatting.Indented));
         }
 
         // PUT api/spel/zet
-        [HttpPut("zet/{veld}")]
-        public ActionResult<string> Zet([FromHeader] string spelerToken, [FromHeader] string spelToken, int[] veld)
+        [HttpPut("zet")]
+        public ActionResult<string> Zet([FromHeader] string spelerToken, [FromHeader] string spelToken, [FromBody] int[] veld)
         {
             Spel spel = iRepository.GetSpel(spelToken);
             string statusZet;
