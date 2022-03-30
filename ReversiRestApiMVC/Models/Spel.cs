@@ -167,14 +167,7 @@
                     }
                 }
 
-                if (AandeBeurt == Kleur.Zwart)
-                {
-                    AandeBeurt = Kleur.Wit;
-                }
-                else
-                {
-                    AandeBeurt = Kleur.Zwart;
-                }
+                AandeBeurt = AandeBeurt == Kleur.Zwart ? Kleur.Wit : Kleur.Zwart;
 
                 return true;
             }
@@ -368,6 +361,7 @@
             Bord[4, 4] = Kleur.Wit;
             Bord[4, 3] = Kleur.Zwart;
             Bord[3, 4] = Kleur.Zwart;
+            AandeBeurt = Kleur.Zwart;
         }
     }
 }

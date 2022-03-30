@@ -87,7 +87,7 @@ namespace ReversiRestApiMVC.Controllers
                 statusZet = "Failed";
             }
             
-            return Content(statusZet);
+            return Content(JsonConvert.SerializeObject(statusZet));
         }
 
         // PUT api/spel/zet/pas
