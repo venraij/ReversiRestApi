@@ -166,9 +166,9 @@
                         }
                     }
                 }
-
+                
+                Bord[rijZet, kolomZet] = AandeBeurt;
                 AandeBeurt = AandeBeurt == Kleur.Zwart ? Kleur.Wit : Kleur.Zwart;
-
                 return true;
             }
 

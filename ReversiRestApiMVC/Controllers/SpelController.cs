@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.SignalR;
+using ReversiRestApiMVC.Hubs;
 
 namespace ReversiRestApiMVC.Controllers
 {
@@ -29,19 +31,17 @@ namespace ReversiRestApiMVC.Controllers
             return Content(JsonConvert.SerializeObject(spellen, Formatting.Indented));
         }
         
-        // GET api/spel?token=token
-        [HttpGet("token")]
-        public ActionResult<Spel> GetSpelBySpelToken([FromQuery] string token)
+        // GET api/spel/token
+        [HttpGet("{token}")]
+        public ActionResult<Spel> GetSpelBySpelToken(string token)
         {
             Spel spel = iRepository.GetSpel(token);
-            return Ok(JsonConvert.SerializeObject(spel, Formatting.Indented));
-        }
-        
-        // GET api/spel?speler1Token=spelerToken
-        [HttpGet("spelerToken")]
-        public ActionResult<Spel> GetSpelBySpelerToken([FromQuery] string spelerToken)
-        {
-            Spel spel = iRepository.GetSpelBySpeler(spelerToken);
+
+            if (spel.Token == null)
+            {
+                spel = iRepository.GetSpelBySpeler(token);
+            }
+            
             return Ok(JsonConvert.SerializeObject(spel, Formatting.Indented));
         }
 
@@ -62,32 +62,12 @@ namespace ReversiRestApiMVC.Controllers
             return CreatedAtAction(nameof(PostSpel), JsonConvert.SerializeObject(spelJson));
         }
 
-        // GET api/spel/beurt?token=token
-        [HttpGet("beurt")]
+        // GET api/spel/beurt/token
+        [HttpGet("beurt/{token}")]
         public ActionResult<Kleur> GetSpelerAanDeBeurt(string token)
         {
             Spel spel = iRepository.GetSpel(token);
             return Content(JsonConvert.SerializeObject(spel.AandeBeurt, Formatting.Indented));
-        }
-
-        // PUT api/spel/zet
-        [HttpPut("zet")]
-        public ActionResult<string> Zet([FromHeader] string spelerToken, [FromHeader] string spelToken, [FromBody] int[] veld)
-        {
-            Spel spel = iRepository.GetSpel(spelToken);
-            string statusZet;
-
-            if(spel.ZetMogelijk(veld[0], veld[1]) == true)
-            {
-                spel.DoeZet(veld[0], veld[1]);
-                statusZet = "Succeeded";
-            }
-            else
-            {
-                statusZet = "Failed";
-            }
-            
-            return Content(JsonConvert.SerializeObject(statusZet));
         }
 
         // PUT api/spel/zet/pas

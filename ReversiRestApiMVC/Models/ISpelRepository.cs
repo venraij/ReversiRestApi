@@ -8,7 +8,7 @@ namespace ReversiRestApiMVC
         public List<Spel> GetSpellen();
         Spel GetSpel(string spelToken);
         Spel GetSpelBySpeler(string spelerToken);
-        // void SaveSpel(Spel spel);
+        void SaveSpel(Spel spel);
     }
 
 }

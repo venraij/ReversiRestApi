@@ -26,7 +26,10 @@ namespace ReversiRestApiMVC
             });
             services.AddSingleton<SpelController>();
             services.AddSingleton<ISpelRepository, SpelAccessLayer>();
-            services.AddSignalR();
+            services.AddSignalR(options =>
+            {
+                options.EnableDetailedErrors = true;
+            });
             services.AddControllers().AddNewtonsoftJson();
 
             services.AddCors(options =>
