@@ -19,6 +19,7 @@
                 if (plek == Kleur.Geen)
                 {
                     bordVol = false;
+                    break;
                 }
             }
 
@@ -28,7 +29,7 @@
                 {
                     for (int x = 0; x < Bord.GetLength(1) - 1; x++)
                     {
-                        if (ZetMogelijk(y, x) == true)
+                        if (ZetMogelijk(y, x))
                         {
                             return false;
                         }
@@ -225,8 +226,8 @@
             {
                 return false;
             }
-
-            if (Bord[rijZet,kolomZet] != Kleur.Geen)
+            
+            if (Bord[rijZet, kolomZet] != Kleur.Geen)
             {
                 return false;
             }
@@ -292,7 +293,7 @@
             {
                 if (Bord[i - 1, (Bord.GetLength(1) - i)] == AandeBeurt)
                 {
-                    if (mogelijk == true)
+                    if (mogelijk)
                     {
                         return true;
                     }
@@ -307,7 +308,7 @@
             {
                 if (Bord[i + 1, (i + 1)] == AandeBeurt)
                 {
-                    if (mogelijk == true)
+                    if (mogelijk)
                     {
                         return true;
                     }
@@ -323,7 +324,7 @@
             {
                 if (Bord[i - 1, (i - 1)] == AandeBeurt)
                 {
-                    if (mogelijk == true)
+                    if (mogelijk)
                     {
                         return true;
                     }
@@ -339,7 +340,7 @@
             {
                 if (Bord[i + 1, ((Bord.GetLength(1) - 1) - (i + 1))] == AandeBeurt)
                 {
-                    if (mogelijk == true)
+                    if (mogelijk)
                     {
                         return true;
                     }

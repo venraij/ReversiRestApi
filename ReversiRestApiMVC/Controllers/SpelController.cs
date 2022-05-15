@@ -85,5 +85,24 @@ namespace ReversiRestApiMVC.Controllers
         {
             return Content("Opgegeven");
         }
+        
+        // GET api/spel/afgelopen
+        [HttpGet("afgelopen/{token}")]
+        public ActionResult<SpelJson> GetSpelAlsAfgelopen(string token)
+        {
+            Spel spel = iRepository.GetSpel(token);
+            
+            if (spel.Token == null)
+            {
+                spel = iRepository.GetSpelBySpeler(token);
+            }
+            
+            if (spel.Afgelopen())
+            {
+                return Ok(JsonConvert.SerializeObject(spel, Formatting.Indented));
+            }
+
+            return Ok("Niet afgelopen");
+        }
     }
 }

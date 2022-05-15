@@ -36,7 +36,7 @@ namespace ReversiRestApiMVC.Hubs
                 bord = JsonConvert.SerializeObject(spel.Bord);
                 return Clients.All.SendAsync("ZetDone", (int) spel.AandeBeurt,  "SUCCEEDED", bord);
             }
-            
+
             return Clients.All.SendAsync("ZetDone", (int) spel.AandeBeurt, "FAILED", bord);
         }
     }
