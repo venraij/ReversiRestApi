@@ -88,7 +88,7 @@ namespace ReversiRestApiMVC.Controllers
         
         // GET api/spel/afgelopen
         [HttpGet("afgelopen/{token}")]
-        public ActionResult<SpelJson> GetSpelAlsAfgelopen(string token)
+        public ActionResult GetSpelAlsAfgelopen(string token)
         {
             Spel spel = iRepository.GetSpel(token);
             
@@ -99,10 +99,12 @@ namespace ReversiRestApiMVC.Controllers
             
             if (spel.Afgelopen())
             {
-                return Ok(JsonConvert.SerializeObject(spel, Formatting.Indented));
+                var spelString = JsonConvert.SerializeObject(spel, Formatting.Indented);
+                iRepository.RemoveSpel(spel.Token);
+                return Ok(spelString);
             }
 
-            return Ok("Niet afgelopen");
+            return Ok(JsonConvert.SerializeObject("Niet afgelopen", Formatting.Indented));
         }
     }
 }

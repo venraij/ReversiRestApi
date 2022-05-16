@@ -42,6 +42,11 @@ namespace ReversiRestApiMVC
         {
             throw new System.NotImplementedException();
         }
+
+        public void RemoveSpel(string spelToken)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
 

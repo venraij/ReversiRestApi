@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using ReversiRestApiMVC.Models;
 
 namespace ReversiRestApiMVC.Hubs
 {
@@ -18,26 +19,26 @@ namespace ReversiRestApiMVC.Hubs
         public Task Zet(int x, int y, string token)
         {
             Spel spel = iRepository.GetSpelBySpeler(token);
-            String bord = JsonConvert.SerializeObject(spel.Bord);
+            string spelString = JsonConvert.SerializeObject(spel, Formatting.Indented);
 
             if (spel.Speler1Token == token && spel.AandeBeurt != Kleur.Zwart)
             {
-                return Clients.All.SendAsync("ZetDone", (int) spel.AandeBeurt, "FAILED", bord);
+                return Clients.All.SendAsync("ZetDone", (int) spel.AandeBeurt, "FAILED", spelString);
             } 
             
             if (spel.Speler2Token == token && spel.AandeBeurt != Kleur.Wit)
             {
-                return Clients.All.SendAsync("ZetDone", (int) spel.AandeBeurt, "FAILED", bord);
+                return Clients.All.SendAsync("ZetDone", (int) spel.AandeBeurt, "FAILED", spelString);
             }
             
             if (spel.DoeZet(y, x))
             {
                 iRepository.SaveSpel(spel);
-                bord = JsonConvert.SerializeObject(spel.Bord);
-                return Clients.All.SendAsync("ZetDone", (int) spel.AandeBeurt,  "SUCCEEDED", bord);
+                spelString = JsonConvert.SerializeObject(spel, Formatting.Indented);
+                return Clients.All.SendAsync("ZetDone", (int) spel.AandeBeurt,  "SUCCEEDED", spelString);
             }
 
-            return Clients.All.SendAsync("ZetDone", (int) spel.AandeBeurt, "FAILED", bord);
+            return Clients.All.SendAsync("ZetDone", (int) spel.AandeBeurt, "FAILED", spelString);
         }
     }
 }

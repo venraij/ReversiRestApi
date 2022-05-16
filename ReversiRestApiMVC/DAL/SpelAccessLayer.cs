@@ -135,5 +135,18 @@ namespace ReversiRestApiMVC
             }
             return spelList;
         }
+        
+        public void RemoveSpel(string spelToken)
+        {
+            using (SqlConnection sqlCon = new SqlConnection(ConnectionString))
+            {
+                sqlCon.Open();
+                SqlCommand sqlCmd = sqlCon.CreateCommand();
+                sqlCmd.CommandText = "DELETE FROM Spel WHERE GUID=@spelToken";
+                sqlCmd.Parameters.Add("@spelToken",SqlDbType.VarChar).Value = spelToken;
+                sqlCmd.ExecuteNonQuery();
+                sqlCon.Close();
+            }
+        }
     }
 }
