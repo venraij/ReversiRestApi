@@ -37,9 +37,13 @@ namespace ReversiRestApiMVC.Controllers
         {
             Spel spel = iRepository.GetSpel(token);
 
-            if (spel.Token == null)
+            if (spel.Token == null && token != "" && token != null)
             {
                 spel = iRepository.GetSpelBySpeler(token);
+            }
+            else
+            {
+                return BadRequest();
             }
             
             return Ok(JsonConvert.SerializeObject(spel, Formatting.Indented));
@@ -60,6 +64,37 @@ namespace ReversiRestApiMVC.Controllers
             iRepository.AddSpel(spel);
 
             return CreatedAtAction(nameof(PostSpel), JsonConvert.SerializeObject(spelJson));
+        }
+        
+        // PATCH api/spel/meespelen
+        [HttpPatch("meespelen")]
+        public ActionResult<SpelJson> JoinSpel([FromBody] SpelJson spelJson)
+        {
+            if (spelJson.Token == null)
+            {
+                return BadRequest("Geef een token mee aan het spel.");
+            }
+            
+            Spel spel = iRepository.GetSpel(spelJson.Token);
+
+            if (spel.Speler2Token == "")
+            {
+                spel.Speler2Token = spelJson.Speler2Token;
+                iRepository.SaveSpel(spel);
+                return Ok(JsonConvert.SerializeObject(spel));
+            } 
+            
+            if (spel.Speler2Token != "")
+            {
+                return BadRequest("Er is al een speler 2.");
+            }
+            
+            if (spel.Speler1Token == spelJson.Speler2Token)
+            {
+                return BadRequest("Je kan niet speler 2 zijn voor je eigen spel.");
+            }
+
+            return BadRequest("Er is een onbekende fout opgetreden.");
         }
 
         // GET api/spel/beurt/token

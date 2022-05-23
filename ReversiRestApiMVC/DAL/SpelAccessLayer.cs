@@ -51,7 +51,7 @@ namespace ReversiRestApiMVC
                         spel.Omschrijving = rdr["Omschrijving"].ToString();
                         spel.Speler1Token = rdr["Speler1token"].ToString();
                         spel.Speler2Token = rdr["Speler2token"].ToString();
-                        spel.Bord = (Kleur[,]) JsonConvert.DeserializeObject(rdr["StringBord"].ToString());
+                        spel.Bord = JsonConvert.DeserializeObject<Kleur[,]>(rdr["StringBord"].ToString());
                         spel.AandeBeurt = (Kleur) Int32.Parse(rdr["AanDeBeurt"].ToString());
 
                         sqlCon.Close();
@@ -100,11 +100,12 @@ namespace ReversiRestApiMVC
             {
                 sqlCon.Open();
                 SqlCommand sqlCmd = sqlCon.CreateCommand();
-                sqlCmd.CommandText = "UPDATE Spel SET StringBord=@stringBord, AanDeBeurt=@aanDeBeurt WHERE GUID=@spelToken";
+                sqlCmd.CommandText = "UPDATE Spel SET StringBord=@stringBord, AanDeBeurt=@aanDeBeurt, Speler2Token=@speler2Token WHERE GUID=@spelToken";
                 string stringBord = JsonConvert.SerializeObject(spel.Bord);
                 sqlCmd.Parameters.Add("@stringBord",SqlDbType.Text).Value = stringBord;
                 sqlCmd.Parameters.Add("@aanDeBeurt",SqlDbType.VarChar).Value = (int) spel.AandeBeurt;
                 sqlCmd.Parameters.Add("@spelToken",SqlDbType.VarChar).Value = spel.Token;
+                sqlCmd.Parameters.Add("@speler2Token",SqlDbType.VarChar).Value = spel.Speler2Token;
                 sqlCmd.ExecuteNonQuery();
                 sqlCon.Close();
             }
