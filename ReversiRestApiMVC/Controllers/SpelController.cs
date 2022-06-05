@@ -96,6 +96,26 @@ namespace ReversiRestApiMVC.Controllers
 
             return BadRequest("Er is een onbekende fout opgetreden.");
         }
+        
+        // DELETE api/spel/speler
+        [HttpDelete("Speler")]
+        public ActionResult<SpelJson> DeleteSpel([FromQuery] string spelerToken)
+        {
+            if (spelerToken == null)
+            {
+                return BadRequest("Geef een spelertoken mee.");
+            }
+            
+            Spel spel = iRepository.GetSpelBySpeler(spelerToken);
+
+            if (spel == null)
+            {
+                return Ok("Speler is niet in actieve spellen.");
+            }
+            
+            iRepository.RemoveSpel(spel.Token);
+            return Ok();
+        }
 
         // GET api/spel/beurt/token
         [HttpGet("beurt/{token}")]
