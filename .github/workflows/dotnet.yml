@@ -29,7 +29,7 @@ jobs:
       with: 
         artifact: test-results
         name: NUNIT Tests
-        path: '*.trx'
+        path: '**/*.trx'
         reporter: dotnet-trx
         fail-on-error: 'true'
         fail-on-empty: 'true'
