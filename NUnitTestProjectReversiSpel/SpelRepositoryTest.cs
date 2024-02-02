@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using ReversiRestApiMVC;
+using ReversiRestApi;
 
 namespace NUnitTestProjectReversiSpel
 {

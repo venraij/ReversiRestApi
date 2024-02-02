@@ -1,6 +1,0 @@
-ReversiRestApiMVC_HostAddress = http://localhost:5119
-
-GET {{ReversiRestApiMVC_HostAddress}}/api/spel
-Accept: application/json
-
-###
