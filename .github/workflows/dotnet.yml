@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --logger "trx;logfilename=testResults.trx"
+      run: dotnet test --logger "trx;logfilename=testResults.trx"
     - name: Test Reporter
       uses: dorny/test-reporter@v1
       if: success() || failure()
