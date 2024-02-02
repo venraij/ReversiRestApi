@@ -1,0 +1,6 @@
+ReversiRestApi_HostAddress = http://localhost:5119
+
+GET {{ReversiRestApi_HostAddress}}/api/spel
+Accept: application/json
+
+###
