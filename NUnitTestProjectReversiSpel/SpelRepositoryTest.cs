@@ -19,7 +19,7 @@ namespace NUnitTestProjectReversiSpel
         {
             Spel spel = new Spel();
             iRepository.AddSpel(spel);
-            Assert.AreEqual(spel, iRepository.GetSpellen()[iRepository.GetSpellen().Count - 1]);
+            Assert.That(spel, Is.EqualTo(iRepository.GetSpellen()[iRepository.GetSpellen().Count - 1]));
         }
 
         [Test]
@@ -29,23 +29,23 @@ namespace NUnitTestProjectReversiSpel
             spel.Token = "UnitTest";
             iRepository.AddSpel(spel);
 
-            Assert.AreEqual(spel, iRepository.GetSpel("UnitTest"));
+            Assert.That(spel, Is.EqualTo(iRepository.GetSpel("UnitTest")));
         }
 
         [Test]
         public void GetSpel_TokenDoesntExist_ReturnNull()
         {
-            Assert.IsNull(iRepository.GetSpel("IDontExist"));
+            Assert.That(iRepository.GetSpel("IDontExist"), Is.Null);
         }
 
         [Test]
         public void GetSpellen_ThreeSpellen_ReturnsThreeSpellen()
         {
-            Assert.AreEqual(3, iRepository.GetSpellen().Count);
+            Assert.That(3, Is.EqualTo(iRepository.GetSpellen().Count));
 
             foreach(Spel spel in iRepository.GetSpellen())
             {
-                Assert.IsInstanceOf<Spel>(spel);
+                Assert.That(spel, Is.InstanceOf<Spel>());
             }   
         }
     }

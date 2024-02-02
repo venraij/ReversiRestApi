@@ -30,7 +30,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(8, 8);
             // Assert
-            Assert.IsFalse(actual);
+            Assert.That(actual, Is.False);
         }
 
         [Test]
@@ -53,7 +53,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(2, 3);
             // Assert
-            Assert.IsTrue(actual);
+            Assert.That(actual, Is.True);
         }
 
         [Test]
@@ -76,7 +76,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(2, 3);
             // Assert
-            Assert.IsFalse(actual);
+            Assert.That(actual, Is.False);
         }
 
 
@@ -101,7 +101,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(0, 3);
             // Assert
-            Assert.IsTrue(actual);
+            Assert.That(actual, Is.True);
         }
 
         [Test]
@@ -126,7 +126,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(0, 3);
             // Assert
-            Assert.IsFalse(actual);
+            Assert.That(actual, Is.False);
         }
 
         [Test]
@@ -156,7 +156,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(0, 3);
             // Assert
-            Assert.IsTrue(actual);
+            Assert.That(actual, Is.True);
         }
 
         [Test]
@@ -186,13 +186,8 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(0, 3);
             // Assert
-            Assert.IsFalse(actual);
+            Assert.That(actual, Is.False);
         }
-
-
-
-
-
 
         [Test]
         public void ZetMogelijk_ZetAanDeRandRechts_ReturnTrue()
@@ -215,7 +210,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(4, 7);
             // Assert
-            Assert.IsTrue(actual);
+            Assert.That(actual, Is.True);
         }
 
         [Test]
@@ -240,7 +235,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(4, 7);
             // Assert
-            Assert.IsFalse(actual);
+            Assert.That(actual, Is.False);
         }
 
         [Test]
@@ -270,7 +265,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(4, 7);
             // Assert
-            Assert.IsTrue(actual);
+            Assert.That(actual, Is.True);
         }
 
         [Test]
@@ -301,9 +296,8 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(4, 7);
             // Assert
-            Assert.IsFalse(actual);
+            Assert.That(actual, Is.False);
         }
-
 
         //     0 1 2 3 4 5 6 7
         //                     
@@ -315,9 +309,6 @@ namespace NUnitTestProjectReversiSpel
         // 5   0 0 0 0 0 0 0 0
         // 6   0 0 0 0 0 0 0 0
         // 7   0 0 0 0 0 0 0 0
-
-
-
         [Test]
         public void ZetMogelijk_StartSituatieZet22Wit_ReturnFalse()
         {
@@ -338,8 +329,9 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(2, 2);
             // Assert
-            Assert.IsFalse(actual);
+            Assert.That(actual, Is.False);
         }
+        
         [Test]
         public void ZetMogelijk_StartSituatieZet22Zwart_ReturnFalse()
         {
@@ -360,9 +352,8 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(2, 2);
             // Assert
-            Assert.IsFalse(actual);
+            Assert.That(actual, Is.False);
         }
-
 
         [Test]
         public void ZetMogelijk_ZetAanDeRandRechtsBoven_ReturnTrue()
@@ -386,7 +377,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(0, 7);
             // Assert
-            Assert.IsTrue(actual);
+            Assert.That(actual, Is.True);
         }
 
         [Test]
@@ -411,7 +402,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(0, 7);
             // Assert
-            Assert.IsFalse(actual);
+            Assert.That(actual, Is.False);
         }
 
         [Test]
@@ -436,7 +427,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(7, 7);
             // Assert
-            Assert.IsTrue(actual);
+            Assert.That(actual, Is.True);
         }
 
         [Test]
@@ -461,7 +452,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(7, 7);
             // Assert
-            Assert.IsFalse(actual);
+            Assert.That(actual, Is.False);
         }
 
         [Test]
@@ -486,7 +477,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(0, 0);
             // Assert
-            Assert.IsTrue(actual);
+            Assert.That(actual, Is.True);
         }
 
         [Test]
@@ -511,7 +502,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(0, 0);
             // Assert
-            Assert.IsFalse(actual);
+            Assert.That(actual, Is.False);
         }
 
         [Test]
@@ -536,7 +527,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.ZetMogelijk(7, 0);
             // Assert
-            Assert.IsTrue(actual);
+            Assert.That(actual, Is.True);
         }
 
         [Test]
@@ -561,7 +552,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.ZetMogelijk(7, 0);
             // Assert
-            Assert.IsFalse(actual);
+            Assert.That(actual, Is.False);
         }
 
         //---------------------------------------------------------------------------
@@ -585,13 +576,13 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.DoeZet(8, 8);
             // Assert
-            Assert.IsFalse(actual);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.That(actual, Is.False);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 3]));
 
-            Assert.AreEqual(Kleur.Wit, spel.AandeBeurt);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.AandeBeurt));
         }
 
         [Test]
@@ -614,12 +605,12 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.DoeZet(2, 3);
             // Assert
-            Assert.IsTrue(actual);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[2, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.That(actual, Is.True);
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[2, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 3]));
 
-            Assert.AreEqual(Kleur.Wit, spel.AandeBeurt);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.AandeBeurt));
         }
 
         [Test]
@@ -642,15 +633,15 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.DoeZet(2, 3);
             // Assert
-            Assert.IsFalse(actual);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.That(actual, Is.False);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 3]));
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[2, 3]);
+            Assert.That(Kleur.Geen, Is.EqualTo(spel.Bord[2, 3]));
 
-            Assert.AreEqual(Kleur.Wit, spel.AandeBeurt);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.AandeBeurt));
         }
 
 
@@ -675,14 +666,14 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.DoeZet(0, 3);
             // Assert
-            Assert.IsTrue(actual);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[0, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[1, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[2, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.That(actual, Is.True);
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[0, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[1, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[2, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 3]));
 
-            Assert.AreEqual(Kleur.Wit, spel.AandeBeurt);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.AandeBeurt));
         }
 
         [Test]
@@ -707,16 +698,16 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.DoeZet(0, 3);
             // Assert
-            Assert.IsFalse(actual);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.That(actual, Is.False);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 3]));
 
-            Assert.AreEqual(Kleur.Wit, spel.Bord[1, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[2, 3]);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[1, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[2, 3]));
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[0, 3]);
+            Assert.That(Kleur.Geen, Is.EqualTo(spel.Bord[0, 3]));
 
         }
 
@@ -747,15 +738,15 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.DoeZet(0, 3);
             // Assert
-            Assert.IsTrue(actual);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[0, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[1, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[2, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[5, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[6, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[7, 3]);
+            Assert.That(actual, Is.True);
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[0, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[1, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[2, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[5, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[6, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[7, 3]));
 
         }
 
@@ -786,15 +777,15 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.DoeZet(0, 3);
             // Assert
-            Assert.IsFalse(actual);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 3]);
+            Assert.That(actual, Is.False);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 4]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 3]));
 
-            Assert.AreEqual(Kleur.Wit, spel.Bord[1, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[2, 3]);
-            Assert.AreEqual(Kleur.Geen, spel.Bord[0, 3]);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[1, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[2, 3]));
+            Assert.That(Kleur.Geen, Is.EqualTo(spel.Bord[0, 3]));
         }
 
         [Test]
@@ -818,13 +809,13 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.DoeZet(4, 7);
             // Assert
-            Assert.IsTrue(actual);
+            Assert.That(actual, Is.True);
 
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 5]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 6]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 7]);
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 5]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 6]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 7]));
         }
 
         [Test]
@@ -849,15 +840,15 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.DoeZet(4, 7);
             // Assert
-            Assert.IsFalse(actual);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.That(actual, Is.False);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 3]));
 
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 5]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 6]);
-            Assert.AreEqual(Kleur.Geen, spel.Bord[4, 7]);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 5]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 6]));
+            Assert.That(Kleur.Geen, Is.EqualTo(spel.Bord[4, 7]));
         }
 
         [Test]
@@ -887,15 +878,15 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.DoeZet(4, 7);
             // Assert
-            Assert.IsTrue(actual);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 0]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 1]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 2]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 5]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 6]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 7]);
+            Assert.That(actual, Is.True);
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 0]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 1]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 2]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 5]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 6]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 7]));
         }
 
         [Test]
@@ -926,19 +917,19 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.DoeZet(4, 7);
             // Assert
-            Assert.IsFalse(actual);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 3]);
+            Assert.That(actual, Is.False);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 4]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 3]));
 
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 0]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 1]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 2]);
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 0]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 1]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 2]));
 
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 5]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 6]);
-            Assert.AreEqual(Kleur.Geen, spel.Bord[4, 7]);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 5]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 6]));
+            Assert.That(Kleur.Geen, Is.EqualTo(spel.Bord[4, 7]));
         }
 
 
@@ -975,13 +966,13 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.DoeZet(2, 2);
             // Assert
-            Assert.IsFalse(actual);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.That(actual, Is.False);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 3]));
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[2, 2]);
+            Assert.That(Kleur.Geen, Is.EqualTo(spel.Bord[2, 2]));
         }
 
         [Test]
@@ -1004,13 +995,13 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.DoeZet(2, 2);
             // Assert
-            Assert.IsFalse(actual);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.That(actual, Is.False);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 3]));
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[2, 2]);
+            Assert.That(Kleur.Geen, Is.EqualTo(spel.Bord[2, 2]));
         }
 
 
@@ -1036,13 +1027,13 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.DoeZet(0, 7);
             // Assert
-            Assert.IsTrue(actual);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[5, 2]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[2, 5]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[1, 6]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[0, 7]);
+            Assert.That(actual, Is.True);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[5, 2]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[3, 4]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[2, 5]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[1, 6]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[0, 7]));
         }
 
         [Test]
@@ -1067,18 +1058,18 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.DoeZet(0, 7);
             // Assert
-            Assert.IsFalse(actual);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.That(actual, Is.False);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 3]));
 
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[1, 6]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[2, 5]);
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[1, 6]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[2, 5]));
 
-            Assert.AreEqual(Kleur.Wit, spel.Bord[5, 2]);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[5, 2]));
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[0, 7]);
+            Assert.That(Kleur.Geen, Is.EqualTo(spel.Bord[0, 7]));
         }
 
         [Test]
@@ -1103,14 +1094,14 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.DoeZet(7, 7);
             // Assert
-            Assert.IsTrue(actual);
+            Assert.That(actual, Is.True);
 
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[2, 2]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[5, 5]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[6, 6]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[7, 7]);
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[2, 2]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[5, 5]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[6, 6]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[7, 7]));
         }
 
         [Test]
@@ -1135,17 +1126,17 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.DoeZet(7, 7);
             // Assert
-            Assert.IsFalse(actual);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.That(actual, Is.False);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 3]));
 
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[2, 2]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[5, 5]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[6, 6]);
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[2, 2]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[5, 5]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[6, 6]));
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[7, 7]);
+            Assert.That(Kleur.Geen, Is.EqualTo(spel.Bord[7, 7]));
         }
 
         [Test]
@@ -1170,13 +1161,13 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.DoeZet(0, 0);
             // Assert
-            Assert.IsTrue(actual);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[0, 0]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[1, 1]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[2, 2]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[5, 5]);
+            Assert.That(actual, Is.True);
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[0, 0]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[1, 1]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[2, 2]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[5, 5]));
         }
 
         [Test]
@@ -1201,18 +1192,18 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.DoeZet(0, 0);
             // Assert
-            Assert.IsFalse(actual);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.That(actual, Is.False);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 3]));
 
-            Assert.AreEqual(Kleur.Wit, spel.Bord[1, 1]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[2, 2]);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[1, 1]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[2, 2]));
 
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[5, 5]);
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[5, 5]));
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[0, 0]);
+            Assert.That(Kleur.Geen, Is.EqualTo(spel.Bord[0, 0]));
         }
 
         [Test]
@@ -1237,13 +1228,13 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.DoeZet(7, 0);
             // Assert
-            Assert.IsTrue(actual);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[7, 0]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[6, 1]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[5, 2]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[2, 5]);
+            Assert.That(actual, Is.True);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[7, 0]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[6, 1]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[5, 2]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[3, 4]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[2, 5]));
         }
 
         [Test]
@@ -1268,19 +1259,19 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.DoeZet(7, 0);
             // Assert
-            Assert.IsFalse(actual);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[3, 3]);
-            Assert.AreEqual(Kleur.Wit, spel.Bord[4, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[3, 4]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[4, 3]);
+            Assert.That(actual, Is.False);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[3, 3]));
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[4, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[3, 4]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[4, 3]));
 
-            Assert.AreEqual(Kleur.Wit, spel.Bord[2, 5]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[5, 2]);
-            Assert.AreEqual(Kleur.Zwart, spel.Bord[6, 1]);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.Bord[2, 5]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[5, 2]));
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.Bord[6, 1]));
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[7, 7]);
+            Assert.That(Kleur.Geen, Is.EqualTo(spel.Bord[7, 7]));
 
-            Assert.AreEqual(Kleur.Geen, spel.Bord[7, 0]);
+            Assert.That(Kleur.Geen, Is.EqualTo(spel.Bord[7, 0]));
         }
 
         [Test]
@@ -1367,8 +1358,8 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Zwart;
             var actual = spel.Pas();
             // Assert
-            Assert.IsTrue(actual);
-            Assert.AreEqual(Kleur.Wit, spel.AandeBeurt);
+            Assert.That(actual, Is.True);
+            Assert.That(Kleur.Wit, Is.EqualTo(spel.AandeBeurt));
         }
 
         [Test]
@@ -1455,8 +1446,8 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.Pas();
             // Assert
-            Assert.IsTrue(actual);
-            Assert.AreEqual(Kleur.Zwart, spel.AandeBeurt);
+            Assert.That(actual, Is.True);
+            Assert.That(Kleur.Zwart, Is.EqualTo(spel.AandeBeurt));
         }
 
         [Test]
@@ -1543,7 +1534,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.Afgelopen();
             // Assert
-            Assert.IsTrue(actual);
+            Assert.That(actual, Is.True);
         }
 
         [Test]
@@ -1630,7 +1621,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.Afgelopen();
             // Assert
-            Assert.IsTrue(actual);
+            Assert.That(actual, Is.True);
         }
 
         [Test]
@@ -1653,7 +1644,7 @@ namespace NUnitTestProjectReversiSpel
             spel.AandeBeurt = Kleur.Wit;
             var actual = spel.Afgelopen();
             // Assert
-            Assert.IsFalse(actual);
+            Assert.That(actual, Is.False);
         }
 
 
@@ -1677,7 +1668,7 @@ namespace NUnitTestProjectReversiSpel
             // Act
             var actual = spel.OverwegendeKleur();
             // Assert
-            Assert.AreEqual(Kleur.Geen, actual);
+            Assert.That(Kleur.Geen, Is.EqualTo(actual));
         }
 
         [Test]
@@ -1705,7 +1696,7 @@ namespace NUnitTestProjectReversiSpel
             // Act
             var actual = spel.OverwegendeKleur();
             // Assert
-            Assert.AreEqual(Kleur.Zwart, actual);
+            Assert.That(Kleur.Zwart, Is.EqualTo(actual));
         }
 
         [Test]
@@ -1734,7 +1725,7 @@ namespace NUnitTestProjectReversiSpel
             // Act
             var actual = spel.OverwegendeKleur();
             // Assert
-            Assert.AreEqual(Kleur.Wit, actual);
+            Assert.That(Kleur.Wit, Is.EqualTo(actual));
         }
     }
 }
