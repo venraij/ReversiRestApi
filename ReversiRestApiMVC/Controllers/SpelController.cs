@@ -1,18 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using ReversiRestApiMVC.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.SignalR;
-using ReversiRestApiMVC.Hubs;
 
 namespace ReversiRestApiMVC.Controllers
 {
-    [Route("api/spel")]
+    [Route("api/[controller]")]
     [ApiController]
     public class SpelController : ControllerBase
     {
